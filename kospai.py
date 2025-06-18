@@ -20,7 +20,6 @@ import nltk
 from sklearn.feature_extraction.text import TfidfVectorizer
 from okt import build_bag_of_words
 
-
 # PyTorch
 import torch
 import torch.nn as nn
@@ -160,7 +159,6 @@ class BertForMultiLabelSequenceClassification(BertPreTrainedModel):
     def unfreeze_bert_encoder(self):
         for param in self.bert.parameters():
             param.requires_grad = True
-
 
 def text_to_loader_bert(sentences, max_len):
     tokenizer = AutoTokenizer.from_pretrained("monologg/koelectra-base-v3-discriminator")
