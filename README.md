@@ -1,103 +1,117 @@
-![image](https://github.com/user-attachments/assets/59bde571-cd92-439f-abdd-44e7616c9ec7)
+# 💡 점자 번역 프린터  
+대표 사진
 
-<br/>
-<br/>
+---
 
-# 0. Getting Started (시작하기)
-```bash
-$ npm start
+## 📌 개요  
+
+사용자가 문자를 입력하면 그 문자를 점자로 변환한 뒤, 솔레노이드를 돌출시켜 한 글자씩 해당 점자를 출력한다. 시각장애인이 손으로 직접 촉지하며 문자를 읽을 수 있도록 설계된 점자 번역 프로젝트이다.  
+
+---
+
+## 🔍 개발 배경  
+ - 우리 사회에는 여전히 장애인을 위한 복지의 사각지대가 존재하며, 특히 시각장애인의 정보 접근권은 충분히 보장받지 못하고 있다. 우리는 그중에서도 점자 표기의 부족이 시각장애인의 일상에 큰 제약이 된다는 점에 주목하였다. 이에 따라, 언제 어디서든 원하는 문구를 점자로 변환해 출력할 수 있는 '점자 번역 프린터'를 설계하게 되었다.
+ - 점자 번역 프린터는 입력된 문구를 점자로 변환한 뒤 종이에 인쇄하여 즉각적이고 실질적인 활용이 가능하도록 고안되었다. 이를 통해 점자 표기가 없는 물건이나 장소에도 점자 스티커를 직접 부착함으로써 기존의 미흡한 점자 표기를 보완하는 도구로 활용하는 것을 궁극적 목표로 개발에 임하였다.  
+
+---
+
+## 🛠 사용 기술 및 개발 환경  
+- 언어: Python, C++ (Arduino)  
+- 하드웨어: Arduino UNO   
+- 툴: Arduino IDE, PyCharm, Cura (3D Printing)  
+
+---
+
+## 🧱 사용 부품  
+- Arduino UNO
+- 1.5V AAA배터리 4개, 배터리 홀더
+- 솔레노이드 6개
+- 릴레이 모듈 6개  
+
+---
+
+## ⚙️ 환경 설정
+### HW
+- Arduino UNO의 Digital Pin 6개와 솔레노이드 연결
+### SW
+```pip install pyserial```
+- 연결한 Digital Pin 번호에 따라 brai.ino의 pins 배열 수정
+- Arduino에 연결한 포트 번호에 따라 user.py의 PORT 변수 수정
+
+---
+
+## 🚦 작동 순서  
+1. 📝 사용자의 문자열 입력  
+2. 🐍 파이썬: 문자열 → 점자 변환  
+3. 📤 점자 번호 리스트 → 시리얼 전송  
+4. 🧠 아두이노: 번호 수신  
+5. ⚙️ 핀 HIGH → 솔레노이드 작동 → 점자 돌출  
+6. ✋ 손으로 점자 인식
+
+---
+
+## 🔧 주요 기능  
+-  
+-  
+-  
+
+---
+
+## 🔌 하드웨어 구성 및 회로도  
+> 회로도, 연결도, 외형 구조, 배치도 등 시각 자료 설명 포함
+
+---
+
+## 🧰 제작 과정  
+사진 
+- 3D프린터로 몸체 제작 후 조립
+- 배터리를 배터리 홀더에 연결 후 릴레이 모듈과 납땜
+- 솔레노이드 6개를 3행 2열 형태로 부착
+- 릴레이 모듈을 각 솔레노이드와 연결해 납땜
+- 위 부품들을 몸체 아래에 배치
+
+---
+
+## 📷 시연 영상 및 결과 화면  
+> 동작 영상, 출력 결과 사진, 작동 장면 등
+
+---
+
+## 📁 디렉터리 구조
+
 ```
-[서비스 링크](https://club-project-one.vercel.app/)
-
-<br/>
-<br/>
-
-# 1. Project Overview (프로젝트 개요)
-- 프로젝트 이름: 모여봐요 동아리숲!
-- 프로젝트 설명: 전국 대학 동아리 일정관리 및 홍보 커뮤니티
-
-<br/>
-<br/>
-
-# 2. Team Members (팀원 및 팀 소개)
-| 이동규 | 신유승 | 김나연 | 이승준 |
-|:------:|:------:|:------:|:------:|
-| <img src="https://github.com/user-attachments/assets/c1c2b1e3-656d-4712-98ab-a15e91efa2da" alt="이동규" width="150"> | <img src="https://github.com/user-attachments/assets/78ec4937-81bb-4637-975d-631eb3c4601e" alt="신유승" width="150"> | <img src="https://github.com/user-attachments/assets/78ce1062-80a0-4edb-bf6b-5efac9dd992e" alt="김나연" width="150"> | <img src="https://github.com/user-attachments/assets/beea8c64-19de-4d91-955f-ed24b813a638" alt="이승준" width="150"> |
-| PL | FE | FE | FE |
-| [GitHub](https://github.com/LDK1009) | [GitHub](https://github.com/SinYusi) | [GitHub](https://github.com/nay3on) | [GitHub](https://github.com/conconcc) |
-
-<br/>
-<br/>
-
-# 3. Key Features (주요 기능)
-- **회원가입**:
-  - 회원가입 시 DB에 유저정보가 등록됩니다.
-
-- **로그인**:
-  - 사용자 인증 정보를 통해 로그인합니다.
-
-- **내 동아리 일정관리**:
-  - 캘린더 UI를 통해 동아리 관련 일정 추가&삭제가 가능합니다.
-  - 체크박스를 통해 종료되거나 이미 수행한 일정을 표시할 수 있습니다.
-
-- **동아리 찾기**:
-  - 대학 내 동아리를 검색할 수 있습니다.
-  - 검색 시 해당 동아리가 업로드한 홍보글이 보여집니다.
-
-- **동아리 홍보**:
-  - 홍보글 등록을 통해 동아리를 홍보할 수 있습니다.
-
-- **동아리 만들기**:
-  - 새로운 동아리를 만들어 관리할 수 있습니다.
-
-- **동아리 프로필**:
-  - 동아리 홍보글에서 동아리 이름(링크)를 클릭하면 해당 동아리 프로필로 이동합니다.
-  - 동아리 프로필에서는 동아리 소개, 동아리 활동사진 갤러리, 동아리 홍보글 기록관 등을 볼 수 있습니다.
-
-<br/>
-<br/>
-
-# 4. Tasks & Responsibilities (작업 및 역할 분담)
-|  |  |  |
-|-----------------|-----------------|-----------------|
-| 이동규    |  <img src="https://github.com/user-attachments/assets/c1c2b1e3-656d-4712-98ab-a15e91efa2da" alt="이동규" width="100"> | <ul><li>프로젝트 계획 및 관리</li><li>팀 리딩 및 커뮤니케이션</li><li>커스텀훅 개발</li></ul>     |
-| 신유승   |  <img src="https://github.com/user-attachments/assets/78ec4937-81bb-4637-975d-631eb3c4601e" alt="신유승" width="100">| <ul><li>메인 페이지 개발</li><li>동아리 만들기 페이지 개발</li><li>커스텀훅 개발</li></ul> |
-| 김나연   |  <img src="https://github.com/user-attachments/assets/78ce1062-80a0-4edb-bf6b-5efac9dd992e" alt="김나연" width="100">    |<ul><li>홈 페이지 개발</li><li>로그인 페이지 개발</li><li>동아리 찾기 페이지 개발</li><li>동아리 프로필 페이지 개발</li><li>커스텀훅 개발</li></ul>  |
-| 이승준    |  <img src="https://github.com/user-attachments/assets/beea8c64-19de-4d91-955f-ed24b813a638" alt="이승준" width="100">    | <ul><li>회원가입 페이지 개발</li><li>마이 프로필 페이지 개발</li><li>커스텀훅 개발</li></ul>    |
-
-<br/>
-<br/>
-
-# 5. Technology Stack (기술 스택)
-## 5.1 Language
-|  |  |
-|-----------------|-----------------|
-| HTML5    |<img src="https://github.com/user-attachments/assets/2e122e74-a28b-4ce7-aff6-382959216d31" alt="HTML5" width="100">| 
-| CSS3    |   <img src="https://github.com/user-attachments/assets/c531b03d-55a3-40bf-9195-9ff8c4688f13" alt="CSS3" width="100">|
-| Javascript    |  <img src="https://github.com/user-attachments/assets/4a7d7074-8c71-48b4-8652-7431477669d1" alt="Javascript" width="100"> | 
-
-<br/>
-
-# 6. Project Structure (프로젝트 구조)
-```plaintext
-project/
-├── public/
-│   ├── index.html           # HTML 템플릿 파일
-│   └── favicon.ico          # 아이콘 파일
-├── src/
-│   ├── assets/              # 이미지, 폰트 등 정적 파일
-│   ├── components/          # 재사용 가능한 UI 컴포넌트
-│   ├── hooks/               # 커스텀 훅 모음
-│   ├── pages/               # 각 페이지별 컴포넌트
-│   ├── App.js               # 메인 애플리케이션 컴포넌트
-│   ├── index.js             # 엔트리 포인트 파일
-│   ├── index.css            # 전역 css 파일
-│   ├── firebaseConfig.js    # firebase 인스턴스 초기화 파일
-│   package-lock.json    # 정확한 종속성 버전이 기록된 파일로, 일관된 빌드를 보장
-│   package.json         # 프로젝트 종속성 및 스크립트 정의
-├── .gitignore               # Git 무시 파일 목록
-└── README.md                # 프로젝트 개요 및 사용법
+├── docs/
+│   └── dev-log.md    
+├── README.md
+├── brai.ino
+└── user.py
 ```
 
-<br/>
-<br/>
+---
+
+## 🚀 실행 방법
+1. Arduino 연결 후 brai.ino 업로드 (시리얼 모니터가 열려 있으면 실행이 되지 않으므로 꼭 닫아주기)
+2. PyCharm에서 user.py 실행 후 문자열 입력
+3. 솔레노이드 작동 확인
+
+---
+
+## 🏆 성과
+- 프로젝트 완성 후, 12월에 동아리 자체 행사로써 프로젝트 전시 및 발표
+ 
+---
+
+## 💭 한계  
+- 입력된 문구를 점자로 출력하기 위해, 솔레노이드에 펜심을 부착하여 종이에 직접 인쇄하는 방법을 시도하였으나, 일반적인 소형 솔레노이드는 출력력이 약해 종이에 충분한 압력을 가하지 못했다. 이를 보완하기 위해 전압을 높여 작동시킨 결과 발열이 심해지는 문제 발생하였다. 출력 안정성 측면에서 한계가 확인되었으며, 현재 구조로는 실제 인쇄 활용이 어려운 것으로 판단하였다.
+- 한글 점자 체계는 구조가 매우 복잡하여 구현에 어려움이 있었기 때문에, 현재는 영문 소문자와 일부 문장 부호에 한해 점자 변환이 가능하도록 구현하였다.
+
+---
+
+## 📚 참고 자료
+- pin map
+
+사진
+
+- 표
+
+사진
